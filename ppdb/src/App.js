@@ -11,6 +11,7 @@ import GalleryComp from "./Component/GalleryComp";
 import PpdbComp from "./Component/PpdbComp";
 import LoginComp from "./Component/LoginComp";
 import RegisterComp from "./Component/RegisterComp";
+import WrapperComp from "./Component/WrapperComp";
 import Dashboard from "./Component/dashboard/Dashboard";
 import { useState, useEffect } from "react";
 
@@ -49,14 +50,17 @@ function App() {
           path="/dashboard"
           element={
             isAuthenticated ? (
-              <Dashboard setIsAuthenticated={setIsAuthenticated} />
+              <WrapperComp setIsAuthenticated={setIsAuthenticated} />
             ) : (
               <Navigate to="/login" state={{ from: "/dashboard" }} replace />
             )
           }
           onEnter={() => setShowNavbar(false)}
           onLeave={() => setShowNavbar(true)}
-        />
+        >
+          <Route index element={<Dashboard />} />
+          <Route path="*" element={<Navigate to="/dashboard" />} />
+        </Route>
       </Routes>
     </Router>
   );
