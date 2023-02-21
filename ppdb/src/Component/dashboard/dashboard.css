@@ -26,7 +26,6 @@ header {
   width: 30px;
 }
 .sidebar .toggle {
-  
   top: 5%;
   right: 30px;
   height: 25px;
@@ -105,4 +104,9 @@ li.dashboard a {
 }
 ul.menu {
   padding: 0;
+}
+
+.ct-toast-success {
+  color: #ffffff;
+  background: #6ec05f;
 }
