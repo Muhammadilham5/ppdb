@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "nodemon index.js",
+    "build": "node index.js"
+  },
   "dependencies": {
     "axion": "^0.1.0",
     "cors": "^2.8.5",

@@ -1,0 +1,23 @@
+{
+  "name": "ppdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:all": "concurrently \"cd backend && npm run start \"  \"cd ppdb && npm run start\"",
+    "install:all": "concurrently \"cd backend && npm install\" \"cd ppdb && npm install\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muhammadilham5/ppdb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muhammadilham5/ppdb/issues"
+  },
+  "homepage": "https://github.com/Muhammadilham5/ppdb#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
