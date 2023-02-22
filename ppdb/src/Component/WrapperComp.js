@@ -55,7 +55,7 @@ const WrapperComp = ({ setIsAuthenticated }) => {
             </li>
 
             <li className="nav-link dashboard">
-              <a href="/">
+              <a href="/dashboard">
                 <i className="icon">
                   <img src={verification} alt="" />
                 </i>

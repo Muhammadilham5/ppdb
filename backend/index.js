@@ -181,3 +181,27 @@ app.get("/data-siswa", (req, res) => {
     res.json(rows);
   });
 });
+
+app.get("/dashboard1", (req, res) => {
+  connection.query("SELECT COUNT(*) AS jumlah FROM data_siswa", (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.json(result[0].jumlah);
+  });
+});
+
+app.get("/dashboard2", (req, res) => {
+  connection.query("SELECT COUNT(*) AS jumlah FROM pendaftaran", (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.json(result[0].jumlah);
+  });
+});
+
+app.get("/dashboard3", (req, res) => {
+  connection.query("SELECT COUNT(*) AS jumlah FROM login", (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.json(result[0].jumlah);
+  });
+});
