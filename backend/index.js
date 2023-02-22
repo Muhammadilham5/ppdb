@@ -115,10 +115,14 @@ app.post("/ppdb", (req, res) => {
   const nama = req.body.nama;
   const tempatlahir = req.body.tempatlahir;
   const tanggallahir = req.body.tanggallahir;
+  const namawali = req.body.namawali;
+  const notelp = req.body.notelp;
+  const email = req.body.email;
+  const alamat = req.body.alamat;
 
   connection.query(
-    "INSERT INTO pendaftaran (nama_lengkap, tempat_lahir, tanggal_lahir) VALUES (?, ?, ?)",
-    [nama, tempatlahir, tanggallahir],
+    "INSERT INTO pendaftaran (nama_lengkap, tempat_lahir, tanggal_lahir, nama_wali, no_telp, email, alamat) VALUES (?, ?, ?, ?, ?, ?, ?)",
+    [nama, tempatlahir, tanggallahir, namawali, notelp, email, alamat],
     (err, rows) => {
       if (err) throw err;
       res.json({
@@ -146,13 +150,21 @@ app.post("/verifikasi/:id", (req, res) => {
     [id],
     (err) => {
       if (err) throw err;
-      res.json({
-        success: true,
-        message: "Data Berhasil dipindahkan",
-      });
+      connection.query(
+        "INSERT INTO data_orangtua (nama_wali, no_telp, email, alamat) SELECT nama_wali, no_telp, email, alamat FROM pendaftaran WHERE id = ?",
+        [id],
+        (err) => {
+          if (err) throw err;
+          res.json({
+            success: true,
+            message: "Data Berhasil dipindahkan",
+          });
+        }
+      );
     }
   );
 });
+
 
 app.delete("/ppdb/:id", (req, res) => {
   const id = req.params.id;
