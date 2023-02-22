@@ -1,7 +1,8 @@
 import React from "react";
 import "./dashboard.css";
 import Maindashboard from "../Maindashboard";
-import Datadashboard from "../Datadashboard";
+import DataSiswaDashboard from "../DataSiswaDashboard";
+import DataOrtuDashboard from "../DataOrtuDashboard";
 import MenuDashboard from "../MenuDasboard";
 
 const Dashboard = () => {
@@ -9,7 +10,8 @@ const Dashboard = () => {
     <>
       <MenuDashboard />
       <Maindashboard />
-      <Datadashboard />
+      <DataSiswaDashboard />
+      <DataOrtuDashboard />
     </>
   );
 };

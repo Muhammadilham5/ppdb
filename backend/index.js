@@ -194,6 +194,14 @@ app.get("/data-siswa", (req, res) => {
   });
 });
 
+app.get("/data-wali", (req, res) => {
+  connection.query("SELECT * FROM data_orangtua", (err, rows) => {
+    if (err) throw err;
+    console.log(rows);
+    res.json(rows);
+  });
+});
+
 app.get("/dashboard1", (req, res) => {
   connection.query("SELECT COUNT(*) AS jumlah FROM data_siswa", (err, result) => {
     if (err) throw err;

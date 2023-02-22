@@ -13,7 +13,8 @@ const PpdbComp = () => {
 
   const form = (e) => {
     e.preventDefault();
-    if (!nama || !tempatlahir) {
+    if (!nama || !tempatlahir || !tanggallahir || !namawali || !notelp || !email || !alamat) {
+    
       alert("isi data yang kosong");
       return;
     } else {
