@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Datadashboard = () => {
+const DataOrtuDashboard = () => {
   const [datawali, setDataWali] = useState([]);
   const [datasiswa, setDataSiswa] = useState([]);
   useEffect(() => {
@@ -54,4 +54,4 @@ const Datadashboard = () => {
   );
 };
 
-export default Datadashboard;
+export default DataOrtuDashboard;

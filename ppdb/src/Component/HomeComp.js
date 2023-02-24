@@ -2,14 +2,13 @@ import React from "react";
 import FooterComp from "./FooterComp";
 import GalleryComp from "./GalleryComp";
 import ProfileComp from "./ProfileComp";
+import header from "./../asset/tk.jpg";
 
 const HomeComp = () => {
   return (
     <div>
-      <div className="p-5 bg-primary text-white">
-        <h1>Jumbotron Example</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..
-        </p>
+      <div className=" bg-primary text-white">
+        <img src={header} alt="..." style={{width :"100%",height:500}}></img>
       </div>
       <ProfileComp />
       <GalleryComp />

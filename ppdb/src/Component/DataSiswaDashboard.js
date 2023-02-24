@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Datadashboard = () => {
+const DataSiswaDashboard = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Datadashboard = () => {
 
   return (
     <div className="pt-5">
-      <h2>Data siswa</h2>
+      <h2>Data siswa terdaftar</h2>
       <table className="table">
       <thead>
         <tr>
@@ -41,4 +41,4 @@ const Datadashboard = () => {
   );
 };
 
-export default Datadashboard;
+export default DataSiswaDashboard;

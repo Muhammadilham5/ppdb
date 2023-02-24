@@ -6,7 +6,7 @@ import data from "../asset/icons8_profile.ico";
 import logout from "../asset/icons8_logout.ico";
 import dashboard from "../asset/icons8_speed.ico";
 import { toast } from "react-toastify";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 const WrapperComp = ({ setIsAuthenticated }) => {
   const [open, setOpen] = useState(false);
@@ -55,21 +55,31 @@ const WrapperComp = ({ setIsAuthenticated }) => {
             </li>
 
             <li className="nav-link dashboard">
-              <a href="/dashboard">
+            <Link to="/dashboard/verifikasi">
+          
                 <i className="icon">
                   <img src={verification} alt="" />
                 </i>
                 <span className="text">verifikasi</span>
-              </a>
+            </Link>
             </li>
 
             <li className="nav-link dashboard">
-              <a href="/dashboard">
+            <Link to="/dashboard/data-siswa">
                 <i className="icon">
                   <img src={data} alt="" />
                 </i>
                 <span className="text">data siswa</span>
-              </a>
+              </Link>
+            </li>
+
+            <li className="nav-link dashboard">
+            <Link to="/dashboard/data-wali">
+                <i className="icon">
+                  <img src={data} alt="" />
+                </i>
+                <span className="text">data wali</span>
+              </Link>
             </li>
 
             <li
@@ -83,7 +93,6 @@ const WrapperComp = ({ setIsAuthenticated }) => {
                 cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
-                height: "100%",
                 width: "100%",
                 borderRadius: "6px",
                 textDecoration: "none",

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import DataSiswa from "./DataSiswaDashboard";
 
 const PpdbComp = () => {
   const [nama, setNama] = useState("");
@@ -160,6 +161,11 @@ const PpdbComp = () => {
         </div>
         </div>
       </form>
+      <div className="row">
+        <div className="col ms-5">
+        <DataSiswa />
+        </div>
+      </div>
     </div>
   );
 };

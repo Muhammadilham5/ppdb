@@ -14,6 +14,9 @@ import RegisterComp from "./Component/RegisterComp";
 import WrapperComp from "./Component/WrapperComp";
 import Dashboard from "./Component/dashboard/Dashboard";
 import { useState, useEffect } from "react";
+import Maindashboard from "./Component/Maindashboard";
+import DataSiswaDashboard from "./Component/DataSiswaDashboard";
+import DataOrtuDashboard from "./Component/DataOrtuDashboard";
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -59,7 +62,11 @@ function App() {
           onLeave={() => setShowNavbar(true)}
         >
           <Route index element={<Dashboard />} />
-          <Route path="*" element={<Navigate to="/dashboard" />} />
+          <Route path="/dashboard" element={<Navigate to="/dashboard" />} />
+          <Route path="/dashboard/verifikasi" element={<Maindashboard/>} />
+          <Route path="/dashboard/data-siswa" element={<DataSiswaDashboard/>} />
+          <Route path="/dashboard/data-wali" element={<DataOrtuDashboard/>} />
+         
         </Route>
       </Routes>
     </Router>
