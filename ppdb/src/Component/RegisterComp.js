@@ -12,7 +12,7 @@ const LoginComp = () => {
   const login = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/register", {
+      .post("https://ppdb-t7iy.vercel.app/register", {
         username: username,
         password: password,
       })
