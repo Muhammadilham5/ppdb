@@ -9,10 +9,10 @@ app.use(express.json());
 app.use(cors());
 
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "ppdb",
+  host: "153.92.15.3", // or srv1153.hstgr.io
+  user: "u832498606_ilham",
+  password: ":530bS2!",
+  database: "u832498606_ppdb",
 });
 
 connection.connect((error) => {
