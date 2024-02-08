@@ -6,7 +6,7 @@ const Maindashboard = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/ppdb")
+      .get("https://ppdb-t7iy.vercel.app/ppdb")
       .then((response) => {
         setData(response.data);
       })
