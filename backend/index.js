@@ -50,7 +50,7 @@ connection.query(
   }
 );
 
-app.listen(3001, () => {
+app.listen(4000, () => {
   console.log("Express server running on port 3001");
 });
 
