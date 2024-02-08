@@ -225,3 +225,5 @@ app.get("/dashboard3", (req, res) => {
     res.json(result[0].jumlah);
   });
 });
+
+module.exports = app
