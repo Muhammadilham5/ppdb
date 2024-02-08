@@ -6,7 +6,7 @@ const DataSiswaDashboard = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/data-siswa")
+      .get("https://ppdb-t7iy.vercel.app/data-siswa")
       .then((response) => {
         setData(response.data);
       })
