@@ -6,7 +6,7 @@ const Maindashboard = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/ppdb")
+      .get("https://ppdb-t7iy.vercel.app/ppdb")
       .then((response) => {
         setData(response.data);
       })
@@ -17,13 +17,13 @@ const Maindashboard = () => {
 
   const verifikasi = (id) => {
     axios
-      .post(`http://localhost:3001/verifikasi/${id}`, { id: id })
+      .post(`https://ppdb-t7iy.vercel.app/verifikasi/${id}`, { id: id })
       .then((response) => {
         if (response.data.success) {
           console.log("berhasil");
           // Remove the row from the table
           setData(data.filter((row) => row.id !== id));
-          axios.delete(`http://localhost:3001/ppdb/${id}`);
+          axios.delete(`https://ppdb-t7iy.vercel.app/ppdb/${id}`);
         } else {
           console.log("gagal");
         }

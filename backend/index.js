@@ -9,10 +9,10 @@ app.use(express.json());
 app.use(cors());
 
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "ppdb",
+  host: "153.92.15.3", // or srv1153.hstgr.io
+  user: "u832498606_ilham",
+  password: ":530bS2!",
+  database: "u832498606_ppdb",
 });
 
 connection.connect((error) => {
@@ -50,9 +50,23 @@ connection.query(
   }
 );
 
-app.listen(3001, () => {
+app.listen(4000, (err, res) => {
   console.log("Express server running on port 3001");
+  if (err) {
+            console.log(err)
+            return res.status(500).send(err.message)
+        } else {
+            console.log('[INFO] Server Running on port:', port)
+        }
 });
+
+app.get('/', (req, res) => {
+        res.send('Express JS on Vercel')
+    })
+
+    app.get('/ping', (req, res) => {
+        res.send('pong 🏓')
+    })
 
 app.post("/register", (req, res) => {
   const username = req.body.username;
@@ -225,3 +239,5 @@ app.get("/dashboard3", (req, res) => {
     res.json(result[0].jumlah);
   });
 });
+
+module.exports = app

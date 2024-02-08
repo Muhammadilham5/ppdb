@@ -8,7 +8,7 @@ const MenuDashboard = () => {
   const [jumlah3, setJumlah3] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/dashboard1")
+      .get("https://ppdb-t7iy.vercel.app/dashboard1")
       .then((response) => {
         setJumlah1(response.data);
       })

@@ -13,7 +13,7 @@ const LoginComp = ({ setIsAuthenticated }) => {
   const login = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const response = await axios.post("http://localhost:3001/login", {
+    const response = await axios.post("https://ppdb-t7iy.vercel.app/login", {
       username: username,
       password: password,
     });

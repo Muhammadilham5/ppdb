@@ -6,7 +6,7 @@ const DataOrtuDashboard = () => {
   const [datasiswa, setDataSiswa] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/data-wali")
+      .get("https://ppdb-t7iy.vercel.app/data-wali")
       .then((response) => {
         setDataWali(response.data);
       })
@@ -14,7 +14,7 @@ const DataOrtuDashboard = () => {
         console.log(error);
       });
     axios
-      .get("http://localhost:3001/data-siswa")
+      .get("https://ppdb-t7iy.vercel.app/data-siswa")
       .then((response) => {
         setDataSiswa(response.data);
       })

@@ -22,7 +22,7 @@ const PpdbComp = () => {
       alert("data terkirim");
     }
     axios
-      .post("http://localhost:3001/ppdb", {
+      .post("https://ppdb-t7iy.vercel.app/ppdb", {
         nama: nama,
         tempatlahir: tempatlahir,
         tanggallahir: tanggallahir,
