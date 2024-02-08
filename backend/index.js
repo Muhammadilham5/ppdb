@@ -50,9 +50,23 @@ connection.query(
   }
 );
 
-app.listen(4000, () => {
+app.listen(4000, (err, res) => {
   console.log("Express server running on port 3001");
+  if (err) {
+            console.log(err)
+            return res.status(500).send(err.message)
+        } else {
+            console.log('[INFO] Server Running on port:', port)
+        }
 });
+
+app.get('/', (req, res) => {
+        res.send('Express JS on Vercel')
+    })
+
+    app.get('/ping', (req, res) => {
+        res.send('pong 🏓')
+    })
 
 app.post("/register", (req, res) => {
   const username = req.body.username;
